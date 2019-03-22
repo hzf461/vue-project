@@ -1,38 +1,36 @@
 <template>
   <div class="home">
-    <!-- 轮播图 -->
     <van-swipe :autoplay="3000" class="swipe" indicator-color="white">
       <van-swipe-item v-for="item in swipeList" :key="item.img">
         <img :src="item.img" alt>
       </van-swipe-item>
     </van-swipe>
-    <!-- 九宫格 -->
     <div class="demo-icon">
       <div class="van-tab__pane">
-        <div class="van-col van-col--6">
+        <router-link to="/home/newList" class="van-col van-col--6">
           <img src="/static/images/menu1.png" alt>
           <span>新闻资讯</span>
-        </div>
-        <div class="van-col van-col--6">
+        </router-link>
+        <router-link to="/home/newList" class="van-col van-col--6">
           <img src="/static/images/menu2.png" alt>
           <span>图片分享</span>
-        </div>
-        <div class="van-col van-col--6">
+        </router-link>
+        <router-link to="/home/newList" class="van-col van-col--6">
           <img src="/static/images/menu3.png" alt>
           <span>商品购买</span>
-        </div>
-        <div class="van-col van-col--6">
+        </router-link>
+        <router-link to="/home/newList" class="van-col van-col--6">
           <img src="/static/images/menu4.png" alt>
           <span>留言反馈</span>
-        </div>
-        <div class="van-col van-col--6">
+        </router-link>
+        <router-link to="/home/newList" class="van-col van-col--6">
           <img src="/static/images/menu5.png" alt>
           <span>视频专区</span>
-        </div>
-        <div class="van-col van-col--6">
+        </router-link>
+        <router-link to="/home/newList" class="van-col van-col--6">
           <img src="/static/images/menu6.png" alt>
           <span>联系我们</span>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -40,6 +38,7 @@
 
 <script>
 import { Toast } from "vant";
+// import func from "./vue-temp/vue-editor-bridge";
 export default {
   data: () => ({
     swipeList: []
@@ -48,19 +47,27 @@ export default {
     this.loadSwipe();
   },
   methods: {
-    loadSwipe() {
-      this.$http.get("http://localhost:5000/api/getlunbo").then(({ data }) => {
-        if (data.status != 0) return Toast.fail("数据请求失败");
-        this.swipeList = data.message;
-      });
+    async loadSwipe() {
+      // this.$http.get("http://localhost:5000/api/getlunbo").then(({ data }) => {
+      //   if (data.status != 0) return Toast.fail("数据请求失败");
+      //   this.swipeList = data.message;
+      // });
+      let { data } = await this.$http.get("http://localhost:5000/api/getlunbo");
+      console.log(data);
+      if (data.status != 0) return Toast.fail("数据请求失败");
+      this.swipeList = data.message;
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.home {
+  overflow: hidden;
+}
 .swipe {
   height: 200px;
+  overflow: hidden;
   img {
     width: 100%;
     height: 100%;

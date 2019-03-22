@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import 'animate.css/animate.css'
 import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Icon, } from 'vant'
 
 Vue.use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Icon)
