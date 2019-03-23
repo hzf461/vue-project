@@ -7,19 +7,19 @@
     </van-swipe>
     <div class="demo-icon">
       <div class="van-tab__pane">
-        <router-link to="/home/newList" class="van-col van-col--6">
+        <router-link to="/home/news" class="van-col van-col--6">
           <img src="/static/images/menu1.png" alt>
           <span>新闻资讯</span>
         </router-link>
-        <router-link to="/home/newList" class="van-col van-col--6">
+        <router-link to="/home/picture" class="van-col van-col--6">
           <img src="/static/images/menu2.png" alt>
           <span>图片分享</span>
         </router-link>
-        <router-link to="/home/newList" class="van-col van-col--6">
+        <router-link to="/home/buy" class="van-col van-col--6">
           <img src="/static/images/menu3.png" alt>
           <span>商品购买</span>
         </router-link>
-        <router-link to="/home/newList" class="van-col van-col--6">
+        <router-link to="/home/feedback" class="van-col van-col--6">
           <img src="/static/images/menu4.png" alt>
           <span>留言反馈</span>
         </router-link>
@@ -52,8 +52,7 @@ export default {
       //   if (data.status != 0) return Toast.fail("数据请求失败");
       //   this.swipeList = data.message;
       // });
-      let { data } = await this.$http.get("http://localhost:5000/api/getlunbo");
-      console.log(data);
+      let { data } = await this.$http.get("api/getlunbo");
       if (data.status != 0) return Toast.fail("数据请求失败");
       this.swipeList = data.message;
     }
