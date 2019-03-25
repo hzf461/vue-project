@@ -6,9 +6,20 @@ import router from './router'
 import axios from 'axios'
 import 'animate.css/animate.css'
 import moment from 'moment'
-import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Icon, Card, Button } from 'vant'
+import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Icon, Card, Button, Tab, Tabs, Lazyload } from 'vant'
 
-Vue.use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Icon).use(Card).use(Button)
+Vue
+  .use(NavBar)
+  .use(Tabbar)
+  .use(TabbarItem)
+  .use(Swipe)
+  .use(SwipeItem)
+  .use(Icon)
+  .use(Card)
+  .use(Button)
+  .use(Tab)
+  .use(Tabs)
+  .use(Lazyload)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios

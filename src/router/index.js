@@ -9,6 +9,9 @@ import picture from '@/components/news/Picture'
 import buy from '@/components/news/Buy'
 import feedback from '@/components/news/Feedback'
 import newsdetail from '@/components/news/NewsDetail'
+import pictureDetail from '@/components/news/PictureDetail'
+import goods from '@/components/goods/GoodList'
+import goodDetail from '@/components/goods/GoodDetail'
 
 Vue.use(Router)
 
@@ -24,5 +27,8 @@ export default new Router({
     { path: '/home/buy', component: buy },
     { path: '/home/feedback', component: feedback },
     { path: '/home/news/newsdetail', component: newsdetail },
+    { path: '/home/picture/pictureDetail', component: pictureDetail },
+    { path: '/home/goods', component: goods },
+    { path: '/home/goods/goodDetail/:id', component: goodDetail },
   ]
 })

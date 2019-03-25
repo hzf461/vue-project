@@ -7,7 +7,7 @@
       :duration="{enter:800,leave:800}"
     >
       <router-view class="animated"></router-view>
-    </transition> -->
+    </transition>-->
 
     <transition>
       <router-view></router-view>
@@ -26,7 +26,8 @@
 export default {
   data: () => ({
     active: 0
-  })
+  }),
+  created() {}
 };
 </script>
 
@@ -59,6 +60,6 @@ export default {
 
 .v-enter-active,
 .v-leave-active {
-  transition: all .5s;
+  transition: all 0.5s;
 }
 </style>
