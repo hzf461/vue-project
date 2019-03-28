@@ -16,7 +16,8 @@
     <van-tabbar v-model="active">
       <van-tabbar-item to="/home" icon="wap-home">首页</van-tabbar-item>
       <van-tabbar-item to="/vip" icon="gem-o">会员</van-tabbar-item>
-      <van-tabbar-item to="/shopcar" icon="shopping-cart-o" info="50">购物车</van-tabbar-item>
+      <van-tabbar-item to="/shopcar" id="targetPos" icon="shopping-cart-o" v-if="!$store.getters.count">购物车</van-tabbar-item>
+      <van-tabbar-item to="/shopcar" id="targetPos" icon="shopping-cart-o" v-if="$store.getters.count" :info="$store.getters.count">购物车</van-tabbar-item>
       <van-tabbar-item to="/search" icon="search">搜索</van-tabbar-item>
     </van-tabbar>
   </div>
@@ -45,21 +46,21 @@ export default {
       color: #fff;
     }
   }
-}
-.v-enter {
-  opacity: 0;
-  transform: translateX(100%);
-}
+  .v-enter {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 
-.v-leave-to {
-  transform: translateX(-100%);
-  position: absolute;
-  left: -200%;
-  overflow-x: hidden;
-}
+  .v-leave-to {
+    transform: translateX(-100%);
+    position: absolute;
+    left: -200%;
+    overflow-x: hidden;
+  }
 
-.v-enter-active,
-.v-leave-active {
-  transition: all 0.5s;
+  .v-enter-active,
+  .v-leave-active {
+    transition: all 0.4s;
+  }
 }
 </style>

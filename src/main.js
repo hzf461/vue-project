@@ -6,7 +6,8 @@ import router from './router'
 import axios from 'axios'
 import 'animate.css/animate.css'
 import moment from 'moment'
-import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Icon, Card, Button, Tab, Tabs, Lazyload } from 'vant'
+import store from './store'
+import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Icon, Card, Button, Tab, Tabs, Lazyload, Stepper, Switch, SubmitBar } from 'vant'
 
 Vue
   .use(NavBar)
@@ -20,6 +21,9 @@ Vue
   .use(Tab)
   .use(Tabs)
   .use(Lazyload)
+  .use(Stepper)
+  .use(Switch)
+  .use(SubmitBar)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
@@ -33,6 +37,7 @@ axios.defaults.baseURL = 'http://localhost:5000/';  // 默认地址
 var vm = new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
