@@ -32,6 +32,7 @@ Vue.filter('dateFormat', (time, pattern = 'YYYY-MM-DD hh:mm:ss') => {
 })
 
 axios.defaults.baseURL = 'http://106.12.112.144:5000/';  // 默认地址
+// axios.defaults.baseURL = 'http://127.0.0.1:5000/';  // 默认地址
 
 /* eslint-disable no-new */
 var vm = new Vue({

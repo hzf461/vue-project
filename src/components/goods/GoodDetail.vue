@@ -54,7 +54,7 @@ export default {
   }),
   methods: {
     // 获取轮播图
-    async getLunbotu() {
+    getLunbotu() {
       let id = Number(this.$route.params.id) + 100;
       this.$http.get("api/getthumimages/" + id).then(({ data }) => {
         if (data.status != 0) return Toast.fail(data.message);
@@ -70,7 +70,9 @@ export default {
         count: this.value,
         title: this.goodsinfo.title,
         price: this.goodsinfo.sell_price,
-        imgSrc: this.swipeList[0].src,
+        imgSrc: this.swipeList[0]
+          ? this.swipeList[0].src
+          : "http://img4.imgtn.bdimg.com/it/u=386535230,3956809074&fm=26&gp=0.jpg",
         selected: true
       };
       this.$store.commit("addCar", o);
