@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <van-nav-bar class="header" title="黑马程序员·前端14期"/>
+    <van-nav-bar class="header" title="XXX商城"/>
     <!-- <transition
       enter-active-class="fadeInRight"
       leave-active-class="fadeOutLeft"
